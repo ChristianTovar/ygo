@@ -1,4 +1,4 @@
-defmodule Ygo do
+defmodule YGO do
   @moduledoc """
   Documentation for `Ygo`.
   """
