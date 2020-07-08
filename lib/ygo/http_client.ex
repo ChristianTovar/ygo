@@ -30,11 +30,22 @@ defmodule YGO.HttpClient do
       fields
       |> Enum.filter(fn {key, _value} -> key in @expected_fields end)
       |> Enum.into(%{})
+      |> check_empty_map()
 
     [params: values]
   end
 
   def request_data(params) do
-    get!(@endpoint_url, [], params: params)
+    case get!(@endpoint_url, [], params: params) do
+      %HTTPoison.Response{status_code: 200, body: body} ->
+        {:ok, body}
+
+      %HTTPoison.Response{status_code: 400} ->
+        {:error,
+         "No card matching your query was found in the database. Please see https://github.com/ChristianTovar/ygo for syntax usage."}
+    end
   end
+
+  defp check_empty_map(map) when map_size(map) > 0, do: map
+  defp check_empty_map(_map), do: %{error: "this is an error in process"}
 end
