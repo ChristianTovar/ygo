@@ -1,6 +1,6 @@
 defmodule YGO do
   @moduledoc """
-  Documentation for `Ygo`.
+  Documentation for `YGO`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule YGO do
 
   ## Examples
 
-      iex> Ygo.hello()
+      iex> YGO.hello()
       :world
 
   """

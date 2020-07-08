@@ -1,4 +1,4 @@
-defmodule Ygo.MixProject do
+defmodule YGO.MixProject do
   use Mix.Project
 
   def project do
@@ -21,7 +21,10 @@ defmodule Ygo.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:httpoison, "~> 1.6"}
+      {:httpoison, "~> 1.6"},
+      {:doctor, "~> 0.15.0"},
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:git_hooks, "~> 0.5.0", only: [:test, :dev], runtime: false}
     ]
   end
 end

@@ -1,8 +1,8 @@
-defmodule YgoTest do
+defmodule YGOTest do
   use ExUnit.Case
-  doctest Ygo
+  doctest YGO
 
   test "greets the world" do
-    assert Ygo.hello() == :world
+    assert YGO.hello() == :world
   end
 end
