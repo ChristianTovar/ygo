@@ -4,15 +4,51 @@ defmodule YGO do
   """
 
   @doc """
-  Hello world.
+  Get card information based on input paramters.
+
+  Args:
+  * `params` - Map containing the card's searching properties.
 
   ## Examples
 
-      iex> YGO.hello()
-      :world
+    {:ok,
+      [
+      %{
+        "archetype" => "Dark Magician",
+        "atk" => 2500,
+        "attribute" => "DARK",
+        "card_images" => [
+          %{
+            "id" => 46986414,
+            "image_url" => "https://storage.googleapis.com/ygoprodeck.com/pics/46986414.jpg",
+            "image_url_small" => "https://storage.googleapis.com/ygoprodeck.com/pics_small/46986414.jpg"
+          }, ...
+        ],
+        "card_prices" => [
+          %{
+            "amazon_price" => "2.03",
+            "cardmarket_price" => "0.02",
+            ...
+          }
+        ],
+        "card_sets" => [
+          %{
+            "set_code" => "CT13-EN003",
+            "set_name" => "2016 Mega-Tins",
+            ...
+          }, ...
+        ],
+        "def" => 2100,
+        "desc" => "The ultimate wizard in terms of attack and defense.",
+        "id" => 46986414,
+        "level" => 7,
+        "name" => "Dark Magician",
+        "race" => "Spellcaster",
+        "type" => "Normal Monster"
+      }
+      ]}
 
   """
-  def hello do
-    :world
-  end
+  @spec get_card_information(params :: map()) :: {:error, String.t()} | {:ok, [map()]}
+  def get_card_information(params), do: YGO.HttpClient.request_data(params)
 end
