@@ -7,7 +7,8 @@ defmodule YGO.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -25,6 +26,12 @@ defmodule YGO.MixProject do
       {:doctor, "~> 0.15.0"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:git_hooks, "~> 0.5.0", only: [:test, :dev], runtime: false}
+    ]
+  end
+
+  defp aliases do
+    [
+      ci: ["format", "credo --strict", "doctor"]
     ]
   end
 end
