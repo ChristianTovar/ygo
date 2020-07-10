@@ -16,7 +16,7 @@ if Mix.env() != :prod do
         tasks: [
           {:cmd, "mix doctor"},
           {:cmd, "mix test"},
-          {:cmd, "echo 'Freaking Success! 😎👍'"}
+          {:cmd, "echo 'Awesome Commit! 😎👍'"}
         ]
       ]
     ]

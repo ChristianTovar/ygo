@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: mix deps.get
       - name: Build
-      run: mix compile --warnings-as-errors
+        run: mix compile --warnings-as-errors
       - name: Format Code
         run: mix format --check-formatted
       - name: Check Documentation
