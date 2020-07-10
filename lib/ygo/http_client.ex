@@ -45,8 +45,8 @@ defmodule YGO.HttpClient do
   @doc """
   Requests card information to the Yu-Gi-Oh! api.
   """
-  @spec request_data(map()) :: {:error, String.t()} | {:ok, [map()]}
-  def request_data(params) do
+  @spec get_card_information(map()) :: {:error, String.t()} | {:ok, [map()]}
+  def get_card_information(params) do
     case get!(@endpoint_url, [], params: params) do
       %HTTPoison.Response{status_code: 200, body: body} ->
         {:ok, decode_data(body)}
