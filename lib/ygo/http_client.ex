@@ -9,6 +9,7 @@ defmodule YGO.HttpClient do
   @expected_fields [
     :name,
     :fname,
+    :id,
     :type,
     :atk,
     :def,
@@ -18,11 +19,13 @@ defmodule YGO.HttpClient do
     :link,
     :linkmarker,
     :scale,
-    :set,
+    :cardset,
     :archetype,
     :banlist,
     :sort,
-    :la
+    :format,
+    :misc,
+    :staple
   ]
 
   @doc """
