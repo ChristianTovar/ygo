@@ -1,0 +1,38 @@
+name: Elixir CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: YGO CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Elixir
+        uses: actions/setup-elixir@v1
+        with:
+          elixir-version: "1.10.3"
+          otp-version: "22.3"
+      - name: Restore dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: deps
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-
+      - name: Install dependencies
+        run: mix deps.get
+      - name: Build
+      run: mix compile --warnings-as-errors
+      - name: Format Code
+        run: mix format --check-formatted
+      - name: Check Documentation
+        run: mix doctor
+      - name: Static Code Analysis
+        run: mix credo --strict
+      - name: Run tests
+        run: mix test
