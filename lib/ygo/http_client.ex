@@ -18,7 +18,7 @@ defmodule YGO.HttpClient do
     :link,
     :linkmarker,
     :scale,
-    :set,
+    :cardset,
     :archetype,
     :banlist,
     :sort,
