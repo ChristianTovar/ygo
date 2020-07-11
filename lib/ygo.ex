@@ -69,4 +69,10 @@ defmodule YGO do
   """
   @spec get_card_sets :: {:error, String.t()} | {:ok, [map()]}
   defdelegate get_card_sets, to: YGO.CardSets
+
+  @doc """
+  Get all card archetypes.
+  """
+  @spec get_card_archetypes :: {:error, String.t()} | {:ok, [map()]}
+  defdelegate get_card_archetypes, to: YGO.CardArchetypes
 end
