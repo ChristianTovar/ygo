@@ -1,12 +1,11 @@
-defmodule YGO.HttpClient do
+defmodule YGO.CardInformation do
   @moduledoc """
-  Contains HTTP requests dealing functions.
+  Contains HTTP requests for the card information endpoint.
   """
 
   use HTTPoison.Base
 
-  @card_info "https://db.ygoprodeck.com/api/v7/cardinfo.php"
-  @random_card "https://db.ygoprodeck.com/api/v7/randomcard.php"
+  @endpoint_url "https://db.ygoprodeck.com/api/v7/cardinfo.php"
 
   @expected_fields [
     :name,
@@ -51,27 +50,13 @@ defmodule YGO.HttpClient do
   """
   @spec get_card_information(map()) :: {:error, String.t()} | {:ok, [map()]}
   def get_card_information(params) do
-    case get!(@card_info, [], params: params) do
+    case get!(@endpoint_url, [], params: params) do
       %HTTPoison.Response{status_code: 200, body: body} ->
         {:ok, decode_data(body)}
 
       %HTTPoison.Response{status_code: 400} ->
         {:error,
          "No card matching your query was found in the database. Please see https://github.com/ChristianTovar/ygo for syntax usage."}
-    end
-  end
-
-  @doc """
-  Requests random card.
-  """
-  @spec get_random_card :: {:error, String.t()} | {:ok, [map()]}
-  def get_random_card do
-    case get!(@random_card) do
-      %HTTPoison.Response{status_code: 200, body: body} ->
-        Jason.decode(body)
-
-      %HTTPoison.Response{status_code: 400} ->
-        {:error, "API error"}
     end
   end
 
