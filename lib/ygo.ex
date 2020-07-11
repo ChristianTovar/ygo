@@ -56,5 +56,5 @@ defmodule YGO do
   Get a random card.
   """
   @spec get_random_card :: {:error, String.t()} | {:ok, [map()]}
-  defdelegate get_random_card, to: YGO.HttpClient
+  defdelegate get_random_card, to: YGO.RandomCard
 end
