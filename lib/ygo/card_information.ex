@@ -33,7 +33,6 @@ defmodule YGO.CardInformation do
   Removes unnecesary options from request parameters. This
   function is called whenever a request is made.
   """
-  @spec process_request_options(keyword()) :: [params: map()]
   def process_request_options([]), do: []
 
   def process_request_options(params: fields) do

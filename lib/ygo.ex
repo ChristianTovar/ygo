@@ -57,4 +57,10 @@ defmodule YGO do
   """
   @spec get_random_card :: {:error, String.t()} | {:ok, [map()]}
   defdelegate get_random_card, to: YGO.RandomCard
+
+  @doc """
+  Get all card sets.
+  """
+  @spec get_card_sets :: {:error, String.t()} | {:ok, [map()]}
+  defdelegate get_card_sets, to: YGO.CardSets
 end
