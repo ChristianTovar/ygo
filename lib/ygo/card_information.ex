@@ -26,7 +26,8 @@ defmodule YGO.CardInformation do
     :sort,
     :format,
     :misc,
-    :staple
+    :staple,
+    :language
   ]
 
   @doc """
