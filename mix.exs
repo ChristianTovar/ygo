@@ -39,7 +39,7 @@ defmodule YGO.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.6"},
-      {:doctor, "~> 0.15.0"},
+      {:doctor, "~> 0.15.0", only: [:test, :dev], runtime: false},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:git_hooks, "~> 0.5.0", only: [:test, :dev], runtime: false}

@@ -1,19 +1,12 @@
-<p align="center">
-  <a href="https://github.com/ChristianTovar/ygo">
-    <img alt="YGO" src="./logotype.png" height="152" width="285">
-  </a>
-</p>
+![logotype](./logotype.png)
 
-<p align="center">
-  <a href="https://github.com/ChristianTovar/ygo">
-    <img alt="CI Status" src="https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg">
-  </a>
-</p>
-
+![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)
+![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)
+![License badge](https://img.shields.io/hexpm/l/repo_example.svg)
 ---
 
 ## Description
-Get Your Game On! 🔥 <a href="https://github.com/ChristianTovar/ygo">YGO</a> is an Elixir wrapper for the Yu-Gi-Oh! Trading Card Game API from <a href="https://db.ygoprodeck.com/api-guide/">YGOPRODeck</a>.
+Get Your Game On! 🔥 [YGO](https://github.com/ChristianTovar/ygo) is an Elixir wrapper for the Yu-Gi-Oh! Trading Card Game API from [YGOPRODeck](https://db.ygoprodeck.com/api-guide/).
 
 ## Installation
 
@@ -116,4 +109,4 @@ iex> YGO.get_card_archetypes
 ---
 
 ## Credits
-Dependency made with 🖤 by [Christian Tovar](https://github.com/ChristianTovar). API rights correspond to [YGOPRODeck](https://ygoprodeck.com)
+Dependency made with 🖤 by [Christian Tovar](https://github.com/ChristianTovar). API rights correspond to [YGOPRODeck](https://ygoprodeck.com).
