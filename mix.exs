@@ -7,6 +7,13 @@ defmodule YGO.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
+      description: "Yu-Gi-Oh! api wrapper",
+      source_url: "https://github.com/ChristianTovar/ygo",
+      docs: [
+        extras: ["README.md"],
+        main: "readme"
+      ],
+      package: package(),
       deps: deps(),
       aliases: aliases()
     ]
@@ -19,11 +26,21 @@ defmodule YGO.MixProject do
     ]
   end
 
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/ChristianTovar/ygo"
+      }
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:httpoison, "~> 1.6"},
       {:doctor, "~> 0.15.0"},
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:git_hooks, "~> 0.5.0", only: [:test, :dev], runtime: false}
     ]
