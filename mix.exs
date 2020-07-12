@@ -4,10 +4,10 @@ defmodule YGO.MixProject do
   def project do
     [
       app: :ygo,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      description: "Yu-Gi-Oh! api wrapper",
+      description: "YGO is an Elixir wrapper for the Yu-Gi-Oh! Trading Card Game API",
       source_url: "https://github.com/ChristianTovar/ygo",
       docs: [
         extras: ["README.md"],
@@ -39,6 +39,7 @@ defmodule YGO.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.6"},
+      {:jason, "~> 1.2"},
       {:doctor, "~> 0.15.0", only: [:test, :dev], runtime: false},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
