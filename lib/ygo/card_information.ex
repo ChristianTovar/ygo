@@ -52,22 +52,14 @@ defmodule YGO.CardInformation do
   def get_card_information(params) do
     case get!(@endpoint_url, [], params: params) do
       %HTTPoison.Response{status_code: 200, body: body} ->
-        {:ok, decode_data(body)}
+        {:ok, Jason.decode!(body)["data"]}
 
-      %HTTPoison.Response{status_code: 400} ->
-        {:error,
-         "No card matching your query was found in the database. Please see https://github.com/ChristianTovar/ygo for syntax usage."}
+      %HTTPoison.Response{status_code: 400, body: body} ->
+        {:error, Jason.decode!(body)["error"]}
     end
   end
 
   @spec check_empty_map(map()) :: map()
   defp check_empty_map(map) when map_size(map) > 0, do: map
   defp check_empty_map(_map), do: %{error: "this is an error in process"}
-
-  @spec decode_data(String.t()) :: [map()]
-  defp decode_data(body) do
-    body
-    |> Jason.decode!()
-    |> Map.get("data")
-  end
 end
