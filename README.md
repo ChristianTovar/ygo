@@ -1,8 +1,9 @@
-![logotype](./logotype.png)
+![logotype](https://raw.githubusercontent.com/ChristianTovar/ygo/master/logotype.png)
 
-![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)
-![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)
-![License badge](https://img.shields.io/hexpm/l/repo_example.svg)
+[![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)](https://github.com/ChristianTovar/ygo/actions)
+[![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)](https://hex.pm/packages/ygo)
+[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.0)
+[![License badge](https://img.shields.io/hexpm/l/repo_example.svg)](https://github.com/ChristianTovar/ygo/blob/master/LICENSE.txt)
 ---
 
 ## Description
@@ -91,7 +92,7 @@ iex> YGO.get_card_sets
 
 For listing all the cards from an _Archetype_ use:
 ```elixir
-iex> YGO.get_card_set_information(%{archetype: "Blue-Eyes"})
+iex> YGO.get_card_information(%{archetype: "Blue-Eyes"})
 ```
 or in case you want to list all the _Archetypes_:
 ```elixir
