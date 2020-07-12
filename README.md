@@ -36,7 +36,6 @@ and running `mix deps.get`.
 - [Restrictions](#Restrictions)
   - [Rate Limit](#rate-limit)
   - [Image Pulling](#rate-limit)
-- [Contributing](#Contributing)
 
 ---
 
@@ -116,4 +115,5 @@ iex> YGO.get_card_archetypes
 
 ---
 
+## Credits
 Dependency made with 🖤 by [Christian Tovar](https://github.com/ChristianTovar). API rights correspond to [YGOPRODeck](https://ygoprodeck.com)
