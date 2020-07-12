@@ -16,8 +16,8 @@ defmodule YGO.CardSetInformation do
       %HTTPoison.Response{status_code: 200, body: body} ->
         Jason.decode(body)
 
-      %HTTPoison.Response{status_code: 400} ->
-        {:error, "API error"}
+      %HTTPoison.Response{status_code: 400, body: body} ->
+        {:error, Jason.decode!(body)["error"]}
     end
   end
 end
