@@ -1,4 +1,4 @@
-![logotype](./logotype.png)
+![logotype](https://raw.githubusercontent.com/ChristianTovar/ygo/master/logotype.png)
 
 [![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)](https://github.com/ChristianTovar/ygo/actions)
 [![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)](https://hex.pm/packages/ygo)
