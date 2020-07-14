@@ -2,7 +2,7 @@
 
 [![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)](https://github.com/ChristianTovar/ygo/actions)
 [![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)](https://hex.pm/packages/ygo)
-[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.0)
+[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.1)
 [![License badge](https://img.shields.io/hexpm/l/repo_example.svg)](https://github.com/ChristianTovar/ygo/blob/master/LICENSE.txt)
 ---
 
