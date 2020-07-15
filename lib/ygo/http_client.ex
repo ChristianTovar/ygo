@@ -15,7 +15,8 @@ defmodule YGO.HTTPClient do
     |> handle_response()
   end
 
-  defp get_data(endpoint, params) when map_size(params) > 0, do: get!(endpoint, [], params: params)
+  defp get_data(endpoint, params) when map_size(params) > 0,
+    do: get!(endpoint, [], params: params)
 
   defp get_data(endpoint, _), do: get!(endpoint)
 
