@@ -11,5 +11,5 @@ defmodule YGO.CardSetInformation do
   Requests card set information.
   """
   @spec get_card_set_information(set :: binary) :: {:error, String.t()} | {:ok, [map]}
-  def get_card_set_information(set), do: HTTPClient.make_request(@endpoint_url, %{setname: set})
+  def get_card_set_information(set), do: HTTPClient.make_request(@endpoint_url, %{setcode: set})
 end
