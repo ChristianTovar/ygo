@@ -3,7 +3,7 @@ defmodule YGO.RandomCard do
   Contains HTTP requests for random card.
   """
 
-  use HTTPoison.Base
+  alias YGO.HTTPClient
 
   @endpoint_url "https://db.ygoprodeck.com/api/v7/randomcard.php"
 
@@ -11,13 +11,5 @@ defmodule YGO.RandomCard do
   Requests random card.
   """
   @spec get_random_card :: {:error, String.t()} | {:ok, [map()]}
-  def get_random_card do
-    case get!(@endpoint_url) do
-      %HTTPoison.Response{status_code: 200, body: body} ->
-        Jason.decode(body)
-
-      %HTTPoison.Response{status_code: 400, body: body} ->
-        {:error, Jason.decode!(body)["error"]}
-    end
-  end
+  def get_random_card, do: HTTPClient.make_request(@endpoint_url)
 end
