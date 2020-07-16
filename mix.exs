@@ -4,10 +4,10 @@ defmodule YGO.MixProject do
   def project do
     [
       app: :ygo,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      description: "YGO is an Elixir wrapper for the Yu-Gi-Oh! Trading Card Game API",
+      description: "Wrapper for the Yu-Gi-Oh! Trading Card Game API",
       source_url: "https://github.com/ChristianTovar/ygo",
       docs: [
         extras: ["README.md"],
