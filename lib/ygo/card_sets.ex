@@ -3,7 +3,7 @@ defmodule YGO.CardSets do
   Contains HTTP requests for all card sets.
   """
 
-  use HTTPoison.Base
+  alias YGO.HTTPClient
 
   @endpoint_url "https://db.ygoprodeck.com/api/v7/cardsets.php"
 
@@ -11,13 +11,5 @@ defmodule YGO.CardSets do
   Requests all card sets.
   """
   @spec get_card_sets :: {:error, String.t()} | {:ok, [map()]}
-  def get_card_sets do
-    case get!(@endpoint_url) do
-      %HTTPoison.Response{status_code: 200, body: body} ->
-        Jason.decode(body)
-
-      %HTTPoison.Response{status_code: 400, body: body} ->
-        {:error, Jason.decode!(body)["error"]}
-    end
-  end
+  def get_card_sets, do: HTTPClient.make_request(@endpoint_url)
 end
