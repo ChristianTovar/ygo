@@ -2,7 +2,7 @@
 
 [![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)](https://github.com/ChristianTovar/ygo/actions)
 [![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)](https://hex.pm/packages/ygo)
-[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.1)
+[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.2)
 [![License badge](https://img.shields.io/hexpm/l/repo_example.svg)](https://github.com/ChristianTovar/ygo/blob/master/LICENSE.txt)
 ---
 
@@ -16,7 +16,7 @@ YGO can be installed by adding `ygo` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ygo, "~> 0.1.1"}
+    {:ygo, "~> 0.1.2"}
   ]
 end
 ```
@@ -81,7 +81,7 @@ iex> YGO.get_card_information(%{name: "Dark Magician"})
 
 For obtaining information about a specific card set use:
 ```elixir
-iex> YGO.get_card_set_information(%{name: "SDY-046"})
+iex> YGO.get_card_set_information("SDY-046")
 ```
 or in case you want to list every released set:
 ```elixir
