@@ -3,63 +3,13 @@ defmodule YGO.CardInformation do
   Contains HTTP requests for the card information endpoint.
   """
 
-  use HTTPoison.Base
+  alias YGO.HTTPClient
 
   @endpoint_url "https://db.ygoprodeck.com/api/v7/cardinfo.php"
-
-  @expected_fields [
-    :name,
-    :fname,
-    :id,
-    :type,
-    :atk,
-    :def,
-    :level,
-    :race,
-    :attribute,
-    :link,
-    :linkmarker,
-    :scale,
-    :cardset,
-    :archetype,
-    :banlist,
-    :sort,
-    :format,
-    :misc,
-    :staple,
-    :language
-  ]
-
-  @doc """
-  Removes unnecesary options from request parameters. This
-  function is called whenever a request is made.
-  """
-  def process_request_options([]), do: []
-
-  def process_request_options(params: fields) do
-    values =
-      fields
-      |> Map.take(@expected_fields)
-      |> check_empty_map()
-
-    [params: values]
-  end
 
   @doc """
   Requests card information to the Yu-Gi-Oh! api.
   """
   @spec get_card_information(map()) :: {:error, String.t()} | {:ok, [map()]}
-  def get_card_information(params) do
-    case get!(@endpoint_url, [], params: params) do
-      %HTTPoison.Response{status_code: 200, body: body} ->
-        {:ok, Jason.decode!(body)["data"]}
-
-      %HTTPoison.Response{status_code: 400, body: body} ->
-        {:error, Jason.decode!(body)["error"]}
-    end
-  end
-
-  @spec check_empty_map(map()) :: map()
-  defp check_empty_map(map) when map_size(map) > 0, do: map
-  defp check_empty_map(_map), do: %{error: "this is an error in process"}
+  def get_card_information(params), do: HTTPClient.make_request(@endpoint_url, params)
 end
