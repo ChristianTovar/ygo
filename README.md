@@ -85,7 +85,7 @@ iex> YGO.get_card_set_information("SDY-046")
 ```
 or in case you want to list every released set:
 ```elixir
-iex> YGO.get_card_sets
+iex> YGO.get_card_sets()
 ```
 
 ## Archetypes
@@ -96,13 +96,13 @@ iex> YGO.get_card_information(%{archetype: "Blue-Eyes"})
 ```
 or in case you want to list all the _Archetypes_:
 ```elixir
-iex> YGO.get_card_archetypes
+iex> YGO.get_card_archetypes()
 ```
 
 ## Restrictions
 
 ###  ⚠️ Rate Limit
-> The rate limit is 20 requests per 1 second. If you exceed this, you are blocked from accessing the API for 1 hour. This limit rate is being monitored and being adjuested accordingly.
+> The rate limit is 20 requests per 1 second. If you exceed this, you are blocked from accessing the API for 1 hour. This limit rate is being monitored and being adjusted accordingly.
 
 ###  ⚠️ Image Pulling
 > Please download and store all data pulled from this API locally to keep the amount of API calls used to a minimum. Failure to do so may result in either your IP address being blacklisted or the API being rolled back.
