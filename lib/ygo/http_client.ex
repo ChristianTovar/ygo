@@ -54,7 +54,7 @@ defmodule YGO.HTTPClient do
     |> handle_response()
   end
 
-  @spec get_data(String.t(), map) :: %HTTPoison.Response{}
+  @spec get_data(String.t(), map) :: HTTPoison.Response.t() | HTTPoison.AsyncResponse.t()
   defp get_data(endpoint, params) when map_size(params) > 0,
     do: get!(endpoint, [], params: params)
 
