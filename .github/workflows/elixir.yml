@@ -9,15 +9,16 @@ on:
 jobs:
   build:
     name: YGO CI
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
       - name: Set up Elixir
         uses: actions/setup-elixir@v1
         with:
-          elixir-version: "1.10.3"
-          otp-version: "22.3"
+          elixir-version: "1.13.0"
+          otp-version: "24.1.7"
+          experimental-otp: true
       - name: Restore dependencies cache
         uses: actions/cache@v2
         with:
@@ -36,3 +37,8 @@ jobs:
         run: mix credo --strict
       - name: Run tests
         run: mix test
+      - name: Publish new version
+        if: github.ref == 'refs/heads/master'
+        env:
+          HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
+        run: HEX_API_KEY=$HEX_API_KEY mix hex.publish --yes

@@ -4,7 +4,7 @@ defmodule YGO.MixProject do
   def project do
     [
       app: :ygo,
-      version: "0.1.2",
+      version: "0.1.3",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       description: "Wrapper for the Yu-Gi-Oh! Trading Card Game API",

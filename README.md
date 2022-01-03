@@ -2,7 +2,7 @@
 
 [![Build badge](https://github.com/ChristianTovar/ygo/workflows/Elixir%20CI/badge.svg)](https://github.com/ChristianTovar/ygo/actions)
 [![Hex version badge](https://img.shields.io/hexpm/v/ygo.svg)](https://hex.pm/packages/ygo)
-[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.2)
+[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/ygo/0.1.3)
 [![License badge](https://img.shields.io/hexpm/l/repo_example.svg)](https://github.com/ChristianTovar/ygo/blob/master/LICENSE.txt)
 ---
 
@@ -16,7 +16,7 @@ YGO can be installed by adding `ygo` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ygo, "~> 0.1.2"}
+    {:ygo, "~> 0.1.3"}
   ]
 end
 ```
@@ -85,7 +85,7 @@ iex> YGO.get_card_set_information("SDY-046")
 ```
 or in case you want to list every released set:
 ```elixir
-iex> YGO.get_card_sets
+iex> YGO.get_card_sets()
 ```
 
 ## Archetypes
@@ -96,13 +96,13 @@ iex> YGO.get_card_information(%{archetype: "Blue-Eyes"})
 ```
 or in case you want to list all the _Archetypes_:
 ```elixir
-iex> YGO.get_card_archetypes
+iex> YGO.get_card_archetypes()
 ```
 
 ## Restrictions
 
 ###  ⚠️ Rate Limit
-> The rate limit is 20 requests per 1 second. If you exceed this, you are blocked from accessing the API for 1 hour. This limit rate is being monitored and being adjuested accordingly.
+> The rate limit is 20 requests per 1 second. If you exceed this, you are blocked from accessing the API for 1 hour. This limit rate is being monitored and being adjusted accordingly.
 
 ###  ⚠️ Image Pulling
 > Please download and store all data pulled from this API locally to keep the amount of API calls used to a minimum. Failure to do so may result in either your IP address being blacklisted or the API being rolled back.
